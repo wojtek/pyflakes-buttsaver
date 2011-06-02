@@ -626,7 +626,7 @@ class Checker(object):
         for alias in node.names:
             if alias.name == '*':
                 self.scope.importStarred = True
-                self.report(messages.ImportStarUsed, node, node.module)
+                #self.report(messages.ImportStarUsed, node, node.module)
                 continue
             name = alias.asname or alias.name
             importation = Importation(name, node)
