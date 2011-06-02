@@ -269,10 +269,11 @@ class Checker(object):
             for importation in scope.itervalues():
                 if isinstance(importation, Importation):
                     if not importation.used and importation.name not in all:
-                        self.report(
-                            messages.UnusedImport,
-                            importation.source,
-                            importation.name)
+                        pass
+#                        self.report(
+#                            messages.UnusedImport,
+#                            importation.source,
+#                            importation.name)
 
 
     def pushFunctionScope(self):
@@ -570,8 +571,9 @@ class Checker(object):
                 for name, binding in self.scope.iteritems():
                     if (not binding.used and not name in self.scope.globals
                         and isinstance(binding, Assignment)):
-                        self.report(messages.UnusedVariable,
-                                    binding.source, name)
+                        pass
+#                        self.report(messages.UnusedVariable,
+#                                    binding.source, name)
             self.deferAssignment(checkUnusedAssignments)
             self.popScope()
 
